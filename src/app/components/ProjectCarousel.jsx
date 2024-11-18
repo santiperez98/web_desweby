@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const ProjectCarousel = () => {
   const projects = [
@@ -36,7 +37,7 @@ const ProjectCarousel = () => {
             >
               <h3 className="text-2xl font-semibold mb-4 text-center">{project.name}</h3>
               <div className="flex justify-center">
-                <img
+                <Image
                   src={project.image}
                   alt={project.name}
                   className={`mockup-image ${project.device}`}

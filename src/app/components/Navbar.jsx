@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
@@ -19,11 +20,11 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold">[Tu Logo]</div>
         <div className="flex space-x-6 text-white">
-          <a href="/">Inicio</a>
-          <a href="/about">Sobre Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#contacto">Contacto</a>
-          <a href="#clientes">Clientes</a>
+          <Link href="/">Inicio</Link>
+          <Link href="/about">Sobre Nosotros</Link>
+          <Link href="#servicios">Servicios</Link>
+          <Link href="#contacto">Contacto</Link>
+          <Link href="#clientes">Clientes</Link>
         </div>
       </div>
     </motion.nav>
