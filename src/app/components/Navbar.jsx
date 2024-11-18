@@ -1,25 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 left-0 right-0 bg-dark text-light p-4 z-50">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Desweby</h1>
-        <nav className={`flex space-x-6 ${menuOpen ? 'block' : 'hidden'} sm:flex`}>
-          <ul className="flex space-x-6">
-            <li><a href="#services" className="hover:text-aqua">Servicios</a></li>
-            <li><a href="#portfolio" className="hover:text-aqua">Portafolio</a></li>
-            <li><a href="#contact" className="hover:text-aqua">Contacto</a></li>
-          </ul>
-        </nav>
-        <button className="sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className="text-light">☰</span>
-        </button>
+    <motion.nav
+      className={`fixed w-full top-0 z-50 p-4 transition-colors duration-500 ${scroll ? 'bg-gray-800 shadow-lg' : 'bg-transparent'}`}
+    >
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white font-bold">[Tu Logo]</div>
+        <div className="flex space-x-6 text-white">
+          <a href="/">Inicio</a>
+          <a href="/about">Sobre Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#clientes">Clientes</a>
+        </div>
       </div>
-    </header>
+    </motion.nav>
   );
-}
+};
 
 export default Navbar;
