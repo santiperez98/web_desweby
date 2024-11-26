@@ -37,11 +37,13 @@ const ProjectCarousel = () => {
             >
               <h3 className="text-2xl font-semibold mb-4 text-center">{project.name}</h3>
               <div className="flex justify-center">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  className={`mockup-image ${project.device}`}
-                />
+              <Image
+  src={`/${project.image}`} // Ruta corregida para la carpeta "public"
+  alt={project.name}
+  width={500} // Cambia a los valores deseados
+  height={300} // Cambia a los valores deseados
+  className={`mockup-image ${project.device}`}
+/>
               </div>
             </motion.div>
           </div>
