@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+
 import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaDatabase, FaShoppingCart } from 'react-icons/fa';
 import { SiRedux, SiTailwindcss, SiNextdotjs, SiVite, SiBootstrap, SiPostgresql } from 'react-icons/si';
 import { MdWeb } from 'react-icons/md';
@@ -9,18 +9,23 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { useState, useEffect } from 'react';
 
 const Servicios = () => {
-  const [activeTab, setActiveTab] = useState(1);
-
-  // Inicializamos AOS para las animaciones
-  AOS.init();
-
-  const handleTabChange = (index) => {
-    setActiveTab(index);
-  };
-
-  return (
+    const [activeTab, setActiveTab] = useState(1);
+  
+    useEffect(() => {
+      // Asegúrate de que solo se ejecute en el cliente
+      if (typeof window !== 'undefined') {
+        AOS.init();
+      }
+    }, []);
+  
+    const handleTabChange = (index) => {
+      setActiveTab(index);
+    };
+  
+    return (
     <>
     <Navbar/>
     <div className="py-16 bg-gradient-to-r from-gray-800 to-black text-white ">
