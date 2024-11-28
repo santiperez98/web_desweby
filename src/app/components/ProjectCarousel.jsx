@@ -25,7 +25,8 @@ const ProjectCarousel = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="container mx-auto py-12 px-4"
+      className="container mx-auto py-12 px-4 "
+      
     >
       <h2 className="text-4xl font-bold text-center mb-8 text-teal-500">Nuestros Proyectos</h2>
       <Slider {...settings} className="project-carousel">
