@@ -32,7 +32,7 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-lg text-white"
+      className="flex flex-col items-center p-8 bg-gradient-to-r from-teal-500 to-teal-700 rounded-lg shadow-lg text-white"
     >
       <h2 className="text-4xl font-bold mb-4">Contáctanos</h2>
       <p className="text-center mb-8">

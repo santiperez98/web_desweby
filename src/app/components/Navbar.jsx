@@ -40,13 +40,13 @@ const Navbar = () => {
     <motion.nav
       className={`fixed w-full top-0 z-50 p-4 transition-all duration-500 ${
         scroll
-          ? 'bg-gray-800 shadow-lg'
-          : 'bg-transparent border-2 border-gray-300 rounded-lg'
+          ? 'bg-gradient-to-r from-gray-800 to-black text-white shadow-lg'
+          : 'bg-transparent text-white border-2 border-gray-300 rounded-lg'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logotipo a la izquierda */}
-        <div className="text-white font-bold text-xl cursor-pointer flex items-center">
+        <div className="text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-teal-600 cursor-pointer flex items-center">
           <Link href="/">
             <Image
               src={logo}
@@ -65,10 +65,30 @@ const Navbar = () => {
 
         {/* Menú para pantallas grandes */}
         <div className="hidden md:flex space-x-6 text-white">
-          <Link href="/about">Sobre Nosotros</Link>
-          <Link href="/servicios">Servicios</Link>
-          <Link href="/contacto">Contacto</Link>
-          <Link href="/clientes">Clientes</Link>
+          <Link
+            href="/about"
+            className="hover:text-teal-200 transition duration-500 ease-in-out transform hover:scale-105"
+          >
+            Sobre Nosotros
+          </Link>
+          <Link
+            href="/servicios"
+            className="hover:text-teal-200 transition duration-500 ease-in-out transform hover:scale-105"
+          >
+            Servicios
+          </Link>
+          <Link
+            href="/contacto"
+            className="hover:text-teal-200 transition duration-500 ease-in-out transform hover:scale-105"
+          >
+            Contacto
+          </Link>
+          <Link
+            href="/clientes"
+            className="hover:text-teal-200 transition duration-500 ease-in-out transform hover:scale-105"
+          >
+            Clientes
+          </Link>
 
           {user ? (
             <div className="flex items-center space-x-4">
