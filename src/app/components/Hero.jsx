@@ -33,7 +33,7 @@ const Hero = () => {
         ))}
       </Swiper>
       <motion.div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-bold">Bienvenido a [Tu Empresa]</h1>
+        <h1 className="text-4xl md:text-6xl font-bold">Bienvenido a DESWEBY</h1>
         <p className="mt-4 text-lg">Innovación y tecnología para tu negocio</p>
       </motion.div>
     </div>
