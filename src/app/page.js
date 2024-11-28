@@ -17,9 +17,10 @@ const Home = () => {
         <Hero />
         <AboutPreview />
         <HowWeCanHelp />
-        <ProjectCarousel />
+
         <ServicesPreview />
         <BrandsCarousel />
+        <ProjectCarousel />
         <ContactForm />
 
       <Footer />
